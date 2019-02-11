@@ -24,6 +24,7 @@
 - 制御構文
     - if-else
         - 条件演算子(三項演算子)
+    - switch-case
     - while
     - for
 - クイックTDD
@@ -98,19 +99,52 @@ ReferenceError: x is not defined
 1
 2
 ```
+---
+
+## 制御構文 if-else
+
+if-elseは条件式(boolean型)を利用することで分岐を表す制御構文です。
+
+```typescript
+> if(true) { console.log('true';) } else { console.log('false'); }
+true
+> const x = 50;
+> if(x < 50) { console.log('x < 50'); } else { console.log('x >= 50') }
+x >= 50
+// 結果を一時変数(temporary)に代入して、あとで計算する
+> let tmp;
+// elseにif-elseを繋げることで複数の条件を繋げることができる
+> if(x === 100) { tmp = x; } else if(x < 50) { tmp = x / 2; } else { tmp = x * 2;  }
+> tmp * 2
+200
+```
+---
+
+## 条件演算子(三項演算子)
+
+if-elseは文のため値を返しません。式は値を返します。条件演算子は条件に応じて値を返す式です。
+
+```typescript
+> const x = 50;
+> let tmp;
+// ２つは等価です。
+> if(x < 100) { tmp = x * 2; } else { tmp = x / 2; }
+> tmp * 2
+200
+
+> const result = x < 100 ? x * 2 : x / 2; 
+> result * 2
+200
+// 更に一時変数を減らせる。
+> (x < 100 ? x * 2 : x / 2) * 2;
+200
+```
 
 ---
 
 ## クイックTDD
 
-- 男('man')か？
-- 年齢が大人(18歳以上)かどうか？
-- ２つの数字の和
-- ２つの文字列を繋げる
-- '私は次の誕生日で、12歳です。'
-- ２つの数字の商
-- 文字列の長さ
-- 頭と末尾の文字を削る
+- 
 
 ---
 
